@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 17:39:15 by sclolus           #+#    #+#             */
-/*   Updated: 2016/12/06 17:41:00 by sclolus          ###   ########.fr       */
+/*   Updated: 2016/12/06 17:40:05 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ void	ft_print_page(void *addr)
 	i = 0;
 	tmp = color - ((unsigned long)4096 - 1 & (unsigned long)color);
 	while (i < 4096)
-	{
+	{	
 		if (ft_isprint(tmp[i]))
 			ft_putchar(tmp[i]);
 		else
 			ft_putchar('.');
 		i++;
+		
 		if (!(i % 64))
 			ft_putchar('\n');
 	}
