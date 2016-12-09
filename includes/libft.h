@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2016/12/06 18:16:27 by sclolus          ###   ########.fr       */
+/*   Updated: 2016/12/09 04:24:01 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,10 @@ unsigned long	ft_pow(int nbr, unsigned int exponent);
 
 void			ft_print_page(void *addr);
 unsigned int	ft_strchr_index(char *str, char c);
+
+unsigned int	ft_log2(unsigned long long nbr);
 unsigned int	ft_distance(unsigned int a, unsigned int b);
 unsigned int	ft_max(unsigned int a, unsigned int b);
+unsigned int	ft_is_little_endian(void);
 
 #endif
