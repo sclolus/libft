@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2016/12/09 04:24:01 by sclolus          ###   ########.fr       */
+/*   Updated: 2016/12/09 04:33:02 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ unsigned int	ft_strchr_index(char *str, char c);
 unsigned int	ft_log2(unsigned long long nbr);
 unsigned int	ft_distance(unsigned int a, unsigned int b);
 unsigned int	ft_max(unsigned int a, unsigned int b);
+unsigned int	ft_is_power_of_two(unsigned long long nbr);
 unsigned int	ft_is_little_endian(void);
+
 
 #endif
