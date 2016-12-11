@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 03:58:36 by sclolus           #+#    #+#             */
-/*   Updated: 2016/12/09 04:19:40 by sclolus          ###   ########.fr       */
+/*   Updated: 2016/12/11 18:05:17 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ unsigned int	ft_log2(unsigned long long nbr)
 	i = 0;
 	while (nbr >>= 1)
 		i++;
-	return(i);
+	return (i);
 }

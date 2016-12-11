@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 15:33:53 by sclolus           #+#    #+#             */
-/*   Updated: 2016/12/01 05:43:44 by sclolus          ###   ########.fr       */
+/*   Updated: 2016/12/11 18:06:10 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static size_t	ft_sus_addr(unsigned long *longword_ptr, const char *s)
 	else if (!tmp[3])
 		return (tmp - s + 3);
 	else if (!tmp[4])
-		return (tmp - s + 4); 
+		return (tmp - s + 4);
 	else if (!tmp[5])
 		return (tmp - s + 5);
 	else if (!tmp[6])
@@ -47,7 +47,7 @@ size_t			ft_strlen(const char *s)
 	tester = ~magicbit;
 	tmp = (unsigned char*)s;
 	while ((unsigned long)tmp & (sizeof(unsigned long) - 1))
-	{		
+	{
 		++tmp;
 		if (!*tmp)
 			return ((unsigned char *)tmp - (unsigned char*)s);
