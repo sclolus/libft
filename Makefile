@@ -6,10 +6,12 @@ OBJ= $(SRC:.c=.o)
 HDR_PATH= includes
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(FLAGS) $(SRC) -I $(HDR_PATH) -c
+$(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
-	
+
+%.o: %.c
+	$(CC) $(FLAGS) $< -I $(HDR_PATH) -c
+
 clean:
 	rm -f $(OBJ)
 
