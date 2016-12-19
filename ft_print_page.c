@@ -18,7 +18,7 @@ void	ft_print_page(void *addr)
 	int				i;
 
 	i = 0;
-	tmp = addr - ((unsigned long)4096 - 1 & (unsigned long)addr);
+	tmp = addr - ((unsigned long)4095 & (unsigned long)addr);
 	while (i < 4096)
 	{
 		if (ft_isprint(tmp[i]))

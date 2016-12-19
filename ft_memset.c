@@ -14,10 +14,18 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*tmp;
+  unsigned int	i;
+  unsigned long	magicbit;
 
-	tmp = (unsigned char*)b;
-	while (len > 0)
-		*(tmp + len-- - 1) = (unsigned char)c;
-	return (b);
+  i = 0;
+  magicbit = c | c << 8 | c << 16 | c << 24 | (long)c << 32 | (long)c << 40 | (long)c << 48
+    | (long)c << 56;
+  while (i < len % 8)
+    ((unsigned char*)b)[i++] = c;
+  while (i < len)
+    {
+      *((unsigned long*)(b + i)) = magicbit;
+      i += 8;
+    }
+  return (b);
 }

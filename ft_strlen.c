@@ -48,9 +48,9 @@ size_t			ft_strlen(const char *s)
 	tmp = (unsigned char*)s;
 	while ((unsigned long)tmp & (sizeof(unsigned long) - 1))
 	{
-		++tmp;
 		if (!*tmp)
 			return ((unsigned char *)tmp - (unsigned char*)s);
+		++tmp;
 	}
 	longword_ptr = (unsigned long*)tmp;
 	while (1)
