@@ -13,6 +13,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# define Phaszero(x) ((((x + (0x7f7f7f7f7f7f7f7f)) ^ ~x) & 0x818080808080808080)
+# define Phasn(x, n) (Phaszero(x ^ ((~0UL / 255L) * n)))
 
 typedef struct	s_list
 {
