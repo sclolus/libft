@@ -14,11 +14,22 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	int	i;
+  unsigned long	*longword_ptr;
+  unsigned int	i;
+  unsigned int	len;
 
-	i = 0;
-	while ((dst[i] = src[i]))
-		i++;
-	dst[i] = src[i];
-	return (dst);
+  len = ft_strlen(src);
+  i = 0;
+  while (i < len % 8)
+    {
+      dst[i] = src[i];
+      i++;
+    }
+  longword_ptr = (unsigned long*)(src + i);
+  while (i < len)
+    {
+      *((unsigned long*)(dst + i)) = *longword_ptr++;
+      i += 8;
+    }
+  return (dst);
 }

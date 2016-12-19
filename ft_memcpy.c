@@ -14,17 +14,20 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char		*tmp_dst;
-	unsigned char		*tmp_src;
-	size_t				i;
+  unsigned long	*longword_ptr;
+  unsigned int	i;
 
-	i = 0;
-	tmp_dst = (unsigned char*)dst;
-	tmp_src = (unsigned char*)src;
-	while (i < n)
-	{
-		tmp_dst[i] = tmp_src[i];
-		i++;
-	}
-	return (dst);
+  i = 0;
+  while (i < n)
+    {
+      ((unsigned char*)dst)[i] = ((unsigned char*)src)[i];
+      i++;
+    }
+  longword_ptr = (unsigned long*)(src + i);
+  while (i < n)
+    {
+      *((unsigned long*)(dst + i)) = *longword_ptr++;
+      i += 8;
+    }
+  return (dst);
 }
