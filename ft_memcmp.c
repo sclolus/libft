@@ -12,17 +12,48 @@
 
 #include "libft.h"
 
+static int	ft_sus_diff(unsigned char *s1, unsigned char *s2)
+{
+  if (s1[0] != s2[0])
+    return (s2[0] - s1[0]);
+  else if (s1[1] != s2[1])
+    return (s2[1] - s1[1]);
+  else if (s1[2] != s2[2])
+    return (s2[2] - s1[2]);
+  else if (s1[3] != s2[3])
+    return (s2[3] - s1[3]);
+  else if (s1[4] != s2[4])
+    return (s2[4] - s1[4]);
+  else if (s1[5] != s2[5])
+    return (s2[5] - s1[5]);
+  else if (s1[6] != s2[6])
+    return (s2[6] - s1[6]);
+  else
+    return (s2[7] - s1[7]);
+}
+
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *tmp_s1;
-	unsigned char *tmp_s2;
+	unsigned char	*tmp_s1;
+	unsigned char	*tmp_s2;
+	unsigned long	*longword_ptr;
+	unsigned int	i;
 
+	i = 0;
 	tmp_s1 = (unsigned char*)s1;
 	tmp_s2 = (unsigned char*)s2;
-	if (!n)
-		return (0);
-	if (*tmp_s1 == *tmp_s2 && n > 1)
-		return (ft_memcmp(tmp_s1 + 1, tmp_s2 + 1, n - 1));
-	else
-		return (*tmp_s1 - *tmp_s2);
+	while (i < n % 8)
+	  {
+	    if (tmp_s1[i] != tmp_s2[i])
+	      return (tmp_s2[i] - tmp_s1[i]);
+	    i++;
+	  }
+	longword_ptr = (unsigned long*)(tmp_s2 + i);
+	while (i < n)
+	  {
+	    if (*((unsigned long*)(tmp_s1 + i)) != *longword_ptr++)
+	      return (ft_sus_diff((unsigned char*)tmp_s1, (unsigned char*)tmp_s2));
+	    i += 8;
+	  }
+	return (0);
 }
