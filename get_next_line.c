@@ -6,14 +6,14 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 02:08:07 by sclolus           #+#    #+#             */
-/*   Updated: 2016/12/11 18:04:45 by sclolus          ###   ########.fr       */
+/*   Updated: 2016/12/20 23:30:27 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "get_next_line.h"
 
-t_list	*ft_goto_fd_lst(int fd, t_list *lst)
+static t_list	*ft_goto_fd_lst(int fd, t_list *lst)
 {
 	t_fd_data	*new;
 
@@ -36,7 +36,7 @@ t_list	*ft_goto_fd_lst(int fd, t_list *lst)
 	}
 }
 
-int		ft_join_line(char **line, t_fd_data *current_buf)
+static int		ft_join_line(char **line, t_fd_data *current_buf)
 {
 	char			*tmp_line;
 
@@ -48,7 +48,7 @@ int		ft_join_line(char **line, t_fd_data *current_buf)
 	return (1);
 }
 
-int		ft_use_garbage(char **line, t_fd_data *current)
+static int		ft_use_garbage(char **line, t_fd_data *current)
 {
 	char	*tmp;
 	char	*tmp_line;
@@ -69,7 +69,7 @@ int		ft_use_garbage(char **line, t_fd_data *current)
 	return (0);
 }
 
-int		ft_get_line(const int fd, char **line, t_fd_data *content)
+static int		ft_get_line(const int fd, char **line, t_fd_data *content)
 {
 	int	tmp;
 	int	bool_wrote;
@@ -88,7 +88,7 @@ int		ft_get_line(const int fd, char **line, t_fd_data *content)
 	return ((tmp == -1) ? -1 : bool_wrote);
 }
 
-int		get_next_line(const int fd, char **line)
+int				get_next_line(const int fd, char **line)
 {
 	static t_list	list_fd;
 	t_list			*current_lst;

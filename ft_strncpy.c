@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 13:18:10 by sclolus           #+#    #+#             */
-/*   Updated: 2016/11/05 13:22:55 by sclolus          ###   ########.fr       */
+/*   Updated: 2016/12/21 01:46:01 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,27 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-  unsigned long	*longword_ptr;
-  unsigned int	i;
-  unsigned int	n;
+	unsigned long	*longword_ptr;
+	unsigned long	*longword_dst;
+	unsigned int	i;
+	unsigned int	n;
 
-  n = ft_strlen(src);
-  i = 0;
-  while (i < n % 8 && i < len)
-    {
-      dst[i] = src[i];
-      i++;
-    }
-  longword_ptr = (unsigned long*)(src + i);
-  while (i < len && i < n)
-    {
-      *((unsigned long*)(dst + i)) = *longword_ptr++;
-      i += 8;
-    }
-  return (dst);
+	n = ft_strlen(src);
+	n = n > len ? len : n;
+	i = 0;
+	while (src[i] && i < n % 8)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	longword_ptr = (unsigned long*)(src + i);
+	longword_dst = (unsigned long*)(dst + i);
+	while (i < n)
+	{
+		*longword_dst++ = *longword_ptr++;
+		i += 8;
+	}
+	while (i < len)
+		dst[i++] = 0;
+	return (dst);
 }
