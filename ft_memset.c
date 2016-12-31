@@ -21,9 +21,7 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	i = 0;
 	tmp_c = (unsigned char)c;
-	magicbit = (long)tmp_c | (long)tmp_c << 8 | (long)tmp_c << 16
-				| (long)tmp_c << 24 | (long)tmp_c << 32 | (long)tmp_c << 40
-				| (long)tmp_c << 48 | (long)tmp_c << 56;
+	magicbit = (~0UL / 255) * (unsigned char)c;
 	while (i < len % 8)
 		((unsigned char*)b)[i++] = tmp_c;
 	longword_ptr = (unsigned long*)(b + i);
