@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 17:44:52 by sclolus           #+#    #+#             */
-/*   Updated: 2017/01/09 17:48:58 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/01/09 17:51:09 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ uint64_t	ft_random(void)
 	static uint64_t	z2 = 12345;
 	static uint64_t	z3 = 12345;
 	static uint64_t	z4 = 12345;
-	static uint64_t	z5 = 12345;
 	uint64_t		 b;
 
 	b  = ((z1 << 6) ^ z1) >> 13;
