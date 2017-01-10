@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/01/09 17:51:27 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/01/10 14:26:28 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,6 @@ unsigned int	ft_max(unsigned int a, unsigned int b);
 unsigned int	ft_is_power_of_two(unsigned long long nbr);
 unsigned int	ft_is_little_endian(void);
 
-uint64_t		ft_random(void);
-
+uint32_t		ft_random(void);
+void			ft_sort(int32_t	*tab, uint32_t len);
 #endif
