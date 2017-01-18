@@ -6,15 +6,15 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 14:08:33 by sclolus           #+#    #+#             */
-/*   Updated: 2017/01/10 16:52:49 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/01/10 19:43:54 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		ft_swap(int32_t *a, int32_t *b)
+static void		ft_swap(int64_t *a, int64_t *b)
 {
-	int32_t	tmp;
+	int64_t	tmp;
 
 	if (a != b)
 	{
@@ -24,7 +24,7 @@ static void		ft_swap(int32_t *a, int32_t *b)
 	}
 }
 
-static uint32_t	ft_partitioning(int32_t *tab, uint32_t start
+static uint32_t	ft_partitioning(int64_t *tab, uint32_t start
 								, uint32_t last, uint32_t pivot)
 {
 	uint32_t	i;
@@ -43,7 +43,7 @@ static uint32_t	ft_partitioning(int32_t *tab, uint32_t start
 	return (u);
 }
 
-static void		ft_quicksort(int32_t *tab, uint32_t start, uint32_t last)
+static void		ft_quicksort(int64_t *tab, uint32_t start, uint32_t last)
 {
 	uint32_t	pivot;
 
@@ -57,7 +57,7 @@ static void		ft_quicksort(int32_t *tab, uint32_t start, uint32_t last)
 	}
 }
 
-void			ft_sort(int32_t *tab, uint32_t len)
+void			ft_sort(int64_t *tab, uint32_t len)
 {
 	ft_quicksort(tab, 0, len - 1);
 	return ;

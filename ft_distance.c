@@ -6,13 +6,13 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 18:17:01 by sclolus           #+#    #+#             */
-/*   Updated: 2016/12/06 18:17:17 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/01/18 17:40:24 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_distance(unsigned int a, unsigned int b)
+uint64_t	ft_distance(uint64_t a, uint64_t b)
 {
 	return (a > b ? a - b : b - a);
 }

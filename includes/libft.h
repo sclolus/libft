@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/01/10 14:26:28 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/01/18 17:40:23 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,11 +94,11 @@ void			ft_print_page(void *addr);
 unsigned int	ft_strchr_index(char *str, char c);
 
 unsigned int	ft_log2(unsigned long long nbr);
-unsigned int	ft_distance(unsigned int a, unsigned int b);
+uint64_t		ft_distance(uint64_t a, uint64_t b);
 unsigned int	ft_max(unsigned int a, unsigned int b);
 unsigned int	ft_is_power_of_two(unsigned long long nbr);
 unsigned int	ft_is_little_endian(void);
 
-uint32_t		ft_random(void);
-void			ft_sort(int32_t	*tab, uint32_t len);
+uint64_t		ft_random(void);
+void			ft_sort(int64_t	*tab, uint32_t len);
 #endif

@@ -6,19 +6,19 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 17:44:52 by sclolus           #+#    #+#             */
-/*   Updated: 2017/01/10 14:26:14 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/01/10 19:42:59 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-uint32_t	ft_random(void)
+uint64_t	ft_random(void)
 {
-	static uint32_t	z1 = 12345;
-	static uint32_t	z2 = 12345;
-	static uint32_t	z3 = 12345;
-	static uint32_t	z4 = 12345;
-	uint32_t		 b;
+	static uint64_t	z1 = 12345;
+	static uint64_t	z2 = 12345;
+	static uint64_t	z3 = 12345;
+	static uint64_t	z4 = 12345;
+	uint64_t		 b;
 
 	b  = ((z1 << 6) ^ z1) >> 13;
 	z1 = ((z1 & 4294967294U) << 18) ^ b;
