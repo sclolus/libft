@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <string.h>
 # include <stdint.h>
+# include <stdlib.h>
 # define PHASZERO(x) ((((x + (0x7f7f7f7f7f7f7f7f)) ^ ~x) & 0x818080808080808080)
 # define PHASN(x, n) (Phaszero(x ^ ((~0UL / 255L) * n)))
 
@@ -58,6 +59,8 @@ void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
 char			*ft_strnew(size_t size);
 void			ft_strdel(char **as);
+char			*ft_strreplace(char const *str, uint32_t start
+						   , uint32_t end, char const *src);
 void			ft_strclr(char *s);
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
