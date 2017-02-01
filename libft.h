@@ -105,4 +105,6 @@ unsigned int	ft_is_little_endian(void);
 
 uint64_t		ft_random(void);
 void			ft_sort(int64_t	*tab, uint32_t len);
+
+int				get_next_line(const int fd, char **line);
 #endif
