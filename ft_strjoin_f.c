@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 15:15:45 by sclolus           #+#    #+#             */
-/*   Updated: 2016/11/07 11:46:49 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/03/02 04:57:13 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strjoin_f(char *a, char *b, int32_t mode)
 	if (mode == 0)
 		free(a);
 	else if (mode == 1)
-		free(a);
+		free(b);
 	else
 	{
 		free(a);
