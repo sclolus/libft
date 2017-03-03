@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:51:46 by sclolus           #+#    #+#             */
-/*   Updated: 2016/11/07 19:40:06 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/03/03 04:18:18 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		new->content = mem;
 		new->content_size = content_size;
 	}
-	new->next = 0;
+	new->next = NULL;
+	new->prev = NULL;
 	return (new);
 }

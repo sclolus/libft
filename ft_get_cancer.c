@@ -6,11 +6,12 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 06:44:19 by sclolus           #+#    #+#             */
-/*   Updated: 2017/03/02 06:45:59 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/03/03 04:22:45 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_get_cancer(char *str)
 {
