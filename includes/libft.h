@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/03/24 10:51:24 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/03/24 13:43:44 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 # include <string.h>
 # include <stdint.h>
 # include <stdlib.h>
+
 # define PHASZERO(x) ((((x + (0x7f7f7f7f7f7f7f7f)) ^ ~x) & 0x818080808080808080)
 # define PHASN(x, n) (Phaszero(x ^ ((~0UL / 255L) * n)))
+# define STATIC_BUF_SIZE 4096
+# define STATIC_PUT_FLUSH 1
 
 typedef struct	s_list
 {
@@ -97,6 +100,7 @@ void			*ft_lsttotab(t_list *lst, unsigned int len);
 unsigned long	ft_pow(int nbr, unsigned int exponent);
 
 void			ft_print_page(void *addr);
+uint32_t		ft_static_put(char *str, uint32_t len, uint32_t flags);
 unsigned int	ft_strchr_index(char *str, char c);
 
 unsigned int	ft_log2(unsigned long long nbr);
