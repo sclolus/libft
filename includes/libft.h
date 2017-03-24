@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/03/18 05:00:07 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/03/24 10:51:24 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void			ft_memdel(void **ap);
 char			*ft_strnew(size_t size);
 void			ft_strdel(char **as);
 char			*ft_strreplace(char const *str, uint32_t start
-						   , uint32_t end, char const *src);
+						, uint32_t end, char const *src);
 void			ft_strclr(char *s);
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
