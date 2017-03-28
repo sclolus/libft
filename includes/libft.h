@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/03/28 01:26:15 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/03/28 01:53:16 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,4 +125,6 @@ void			ft_get_cancer(char *str);
 void			ft_t_string_expand(t_string *string);
 t_string		*ft_t_string_concat(t_string *string, char *str);
 t_string		*ft_t_string_new(uint32_t capacity);
+t_string		*ft_t_string_concat_len(t_string *string
+									, char *str, uint32_t str_len);
 #endif
