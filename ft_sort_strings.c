@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:25:22 by sclolus           #+#    #+#             */
-/*   Updated: 2017/04/12 20:30:21 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/04/12 20:31:48 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ static void		ft_quicksort(char **tab, uint32_t start, uint32_t last)
 
 void			ft_sort_strings(char **strings, uint32_t n)
 {
+	if (n < 2 || !strings)
+		return ;
 	ft_quicksort(strings, 0, n - 1);
 	return ;
 }
