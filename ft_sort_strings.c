@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort.c                                          :+:      :+:    :+:   */
+/*   ft_sort_strings.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/10 14:08:33 by sclolus           #+#    #+#             */
-/*   Updated: 2017/04/12 20:27:53 by sclolus          ###   ########.fr       */
+/*   Created: 2017/04/12 20:25:22 by sclolus           #+#    #+#             */
+/*   Updated: 2017/04/12 20:30:21 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		ft_swap(int64_t *a, int64_t *b)
+static void		ft_swap(char **a, char **b)
 {
-	int64_t	tmp;
+	char	*tmp;
 
 	if (a != b)
 	{
@@ -24,7 +24,7 @@ static void		ft_swap(int64_t *a, int64_t *b)
 	}
 }
 
-static uint32_t	ft_partitioning(int64_t *tab, uint32_t start
+static uint32_t	ft_partitioning(char **tab, uint32_t start
 								, uint32_t last, uint32_t pivot)
 {
 	uint32_t	i;
@@ -35,7 +35,7 @@ static uint32_t	ft_partitioning(int64_t *tab, uint32_t start
 	u = start;
 	while (i < last)
 	{
-		if (tab[i] < tab[last])
+		if (ft_strcmp(tab[i], tab[last]) < 0)
 			ft_swap(tab + i, tab + u++);
 		i++;
 	}
@@ -43,7 +43,7 @@ static uint32_t	ft_partitioning(int64_t *tab, uint32_t start
 	return (u);
 }
 
-static void		ft_quicksort(int64_t *tab, uint32_t start, uint32_t last)
+static void		ft_quicksort(char **tab, uint32_t start, uint32_t last)
 {
 	uint32_t	pivot;
 
@@ -57,8 +57,8 @@ static void		ft_quicksort(int64_t *tab, uint32_t start, uint32_t last)
 	}
 }
 
-void			ft_sort(int64_t *tab, uint32_t len)
+void			ft_sort_strings(char **strings, uint32_t n)
 {
-	ft_quicksort(tab, 0, len - 1);
+	ft_quicksort(strings, 0, n - 1);
 	return ;
 }
