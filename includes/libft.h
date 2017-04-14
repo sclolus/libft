@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/04/12 20:25:04 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/04/15 01:07:16 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 # define PHASZERO(x) ((((x + (0x7f7f7f7f7f7f7f7f)) ^ ~x) & 0x818080808080808080)
 # define PHASN(x, n) (Phaszero(x ^ ((~0UL / 255L) * n)))
-# define STATIC_BUF_SIZE 4096
+# define STATIC_BUF_SIZE 3
 # define STATIC_PUT_FLUSH 1
 
 typedef struct	s_list
