@@ -6,14 +6,14 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/24 10:51:59 by sclolus           #+#    #+#             */
-/*   Updated: 2017/04/15 01:06:24 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/04/15 01:56:12 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-static uint32_t	ft_static_auto_flush(char *str, uint32_t *len
+static uint32_t	ft_static_auto_flush(char **str, uint32_t *len
 									, char *buf, uint32_t *offset)
 {
 	uint32_t	count;
@@ -25,10 +25,11 @@ static uint32_t	ft_static_auto_flush(char *str, uint32_t *len
 	offset_tmp = *offset;
 	while (len_tmp + offset_tmp >= STATIC_BUF_SIZE)
 	{
-		ft_memcpy(buf + offset_tmp, str + count, STATIC_BUF_SIZE - offset_tmp);
+		ft_memcpy(buf + offset_tmp, *str + count, STATIC_BUF_SIZE - offset_tmp);
 		write(1, buf, STATIC_BUF_SIZE);
 		count += STATIC_BUF_SIZE;
 		len_tmp -= STATIC_BUF_SIZE - offset_tmp;
+		*str += STATIC_BUF_SIZE - offset_tmp;
 		offset_tmp = 0;
 	}
 	*len = len_tmp;
@@ -47,8 +48,8 @@ uint32_t		ft_static_put(char *str, uint32_t len, uint32_t flags)
 		len = 0;
 	else if (!str)
 		return (ft_static_put("(null)", 6, STATIC_PUT_FLUSH));
-	count += ft_static_auto_flush(str, &len, buffer, &offset);
-	ft_memcpy(buffer + offset, str + count, len);
+	count += ft_static_auto_flush(&str, &len, buffer, &offset);
+	ft_memcpy(buffer + offset, str, len);
 	count += len;
 	offset += len;
 	if (flags == STATIC_PUT_FLUSH)
