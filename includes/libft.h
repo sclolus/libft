@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/06/25 17:53:30 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/06/25 18:15:30 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,4 +130,7 @@ t_string		*ft_t_string_concat(t_string *string, char *str);
 t_string		*ft_t_string_new(uint32_t capacity);
 t_string		*ft_t_string_concat_len(t_string *string
 									, char *str, uint32_t str_len);
+
+int32_t			ft_error(uint32_t n, char **str, int32_t return_status);
+void			ft_error_exit(uint32_t n, char **str, int32_t exit_status);
 #endif
