@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 11:34:38 by sclolus           #+#    #+#             */
-/*   Updated: 2017/05/28 04:07:06 by sclolus          ###   ########.fr       */
+/*   Created: 2017/04/03 04:57:34 by sclolus           #+#    #+#             */
+/*   Updated: 2017/06/25 17:55:05 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int32_t	ft_error(uint32_t n, char **str, int32_t return_status)
 {
-	unsigned int	i;
-	unsigned char	tmp_c;
-	unsigned long	*longword_ptr;
-	unsigned long	magicbit;
+	uint32_t	i;
 
 	i = 0;
-	tmp_c = (unsigned char)c;
-	magicbit = (~0UL / 255) * (unsigned char)c;
-	while (i < len % 8)
-		((unsigned char*)b)[i++] = tmp_c;
-	longword_ptr = (unsigned long*)(b + i);
-	while (i < len)
+	ft_putstr_fd(ERROR_NAME_HEADER, 2);
+	while (i < n)
 	{
-		*longword_ptr++ = magicbit;
-		i += 8;
+		ft_putstr_fd(str[i], 2);
+		i++;
 	}
-	return (b);
+	ft_putstr_fd("\n", 2);
+	return (return_status);
 }
