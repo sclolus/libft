@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/28 01:19:16 by sclolus           #+#    #+#             */
-/*   Updated: 2017/03/28 05:59:12 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/07/11 09:21:46 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_string	*ft_t_string_concat(t_string *string, char *str)
 	{
 		ft_memcpy(string->string + string->len, str, str_len);
 		string->len = total_len;
+		string->string[string->len] = '\0';
 	}
 	return (string);
 }

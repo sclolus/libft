@@ -6,12 +6,12 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 05:02:58 by sclolus           #+#    #+#             */
-/*   Updated: 2017/07/11 05:20:34 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/07/11 09:16:54 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "fcntl.h"
+#include <fcntl.h>
 
 static void		ft_get_file_content_string(t_string *string, int fd)
 {
