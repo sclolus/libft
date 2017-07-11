@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/06/25 18:15:30 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/07/11 05:22:40 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define STATIC_PUT_FLUSH 1
 
 # define ERROR_NAME_HEADER "libft_default_error: "
+
 typedef struct	s_list
 {
 	void			*content;
@@ -128,9 +129,24 @@ void			ft_get_cancer(char *str);
 void			ft_t_string_expand(t_string *string);
 t_string		*ft_t_string_concat(t_string *string, char *str);
 t_string		*ft_t_string_new(uint32_t capacity);
+void			ft_t_string_free(t_string *string);
 t_string		*ft_t_string_concat_len(t_string *string
 									, char *str, uint32_t str_len);
 
+/*
+** File handling
+*/
+
+char			*ft_get_file_content(char *filename);
+
+/*
+** Error Handling
+*/
+
+# define ERR_GET_FILE_CONTENT_MALLOC "malloc() failed in get_file_content()"
+# define ERR_FILE_OPEN "Failed to open file: "
+
 int32_t			ft_error(uint32_t n, char **str, int32_t return_status);
 void			ft_error_exit(uint32_t n, char **str, int32_t exit_status);
+
 #endif

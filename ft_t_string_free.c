@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_t_string_free.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/12 02:04:34 by sclolus           #+#    #+#             */
-/*   Updated: 2017/07/11 05:19:55 by sclolus          ###   ########.fr       */
+/*   Created: 2017/07/11 05:07:18 by sclolus           #+#    #+#             */
+/*   Updated: 2017/07/11 05:08:02 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 4096
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct	s_fd_data
+void	ft_t_string_free(t_string *string)
 {
-	int		fd;
-	char	buf[BUFF_SIZE + 1];
-	char	*current;
-}				t_fd_data;
-
-#endif
+	free(string->string);
+	free(string);
+}
