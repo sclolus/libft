@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/07/11 05:22:40 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/09/03 21:31:31 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,25 @@ typedef struct	s_string
 	uint64_t	len;
 	char		*string;
 }				t_string;
+
+typedef struct	s_mem_block
+{
+	uint64_t			capacity;
+	uint64_t			offset;
+	void				*block;
+	struct s_mem_block	*next;
+}				t_mem_block;
+
+/*
+** Mem_block handling
+*/
+
+# define MEM_BLOCK_LIMIT 256
+# define DEFAULT_MEM_BLOCK_SIZE (10000)
+
+void			*ft_mem_block_push_back_elem(t_mem_block *mem_block
+									, void *elem, uint32_t size);
+t_mem_block		*ft_create_mem_block(uint64_t capacity);
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
