@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/09/03 21:31:31 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/09/12 07:16:45 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t			ft_strlen(const char *s);
 char			*ft_strdup(const char *s1);
-char			*ft_strndup(char *str, uint32_t len);
+char			*ft_strndup(char *str, size_t len);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
 char			*ft_strcat(char *s1, const char *s2);
@@ -164,6 +164,7 @@ char			*ft_get_file_content(char *filename);
 
 # define ERR_GET_FILE_CONTENT_MALLOC "malloc() failed in get_file_content()"
 # define ERR_FILE_OPEN "Failed to open file: "
+# define MALLOC_FAILURE "malloc() failed due to insufficient ressources"
 
 int32_t			ft_error(uint32_t n, char **str, int32_t return_status);
 void			ft_error_exit(uint32_t n, char **str, int32_t exit_status);
