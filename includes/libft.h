@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/09/12 07:16:45 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/09/12 07:19:22 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # define PHASN(x, n) (Phaszero(x ^ ((~0UL / 255L) * n)))
 # define STATIC_BUF_SIZE 3
 # define STATIC_PUT_FLUSH 1
+
+# define NORETURN __attribute__((noreturn)) void
 
 # define ERROR_NAME_HEADER "libft_default_error: "
 
