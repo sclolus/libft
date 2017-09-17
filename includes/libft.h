@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/09/14 11:26:30 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/09/16 02:51:10 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,6 +171,6 @@ char			*ft_get_file_content(char *filename);
 # define MALLOC_FAILURE "malloc() failed due to insufficient ressources"
 
 int32_t			ft_error(uint32_t n, char **str, int32_t return_status);
-void			ft_error_exit(uint32_t n, char **str, int32_t exit_status);
+NORETURN		ft_error_exit(uint32_t n, char **str, int32_t exit_status);
 
 #endif
