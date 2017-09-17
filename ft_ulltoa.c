@@ -1,16 +1,16 @@
- /* ************************************************************************** */
- /*                                                                            */
- /*                                                        :::      ::::::::   */
- /*   ft_ulltoa.c                                        :+:      :+:    :+:   */
- /*                                                    +:+ +:+         +:+     */
- /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
- /*                                                +#+#+#+#+#+   +#+           */
- /*   Created: 2017/09/14 11:11:09 by sclolus           #+#    #+#             */
-/*   Updated: 2017/09/14 11:23:28 by sclolus          ###   ########.fr       */
- /*                                                                            */
- /* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ulltoa.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/17 23:08:00 by sclolus           #+#    #+#             */
+/*   Updated: 2017/09/17 23:10:00 by sclolus          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
- #include "libft.h"
+#include "libft.h"
 
 static inline uint32_t	ft_countnbr(uint64_t nbr)
 {
@@ -27,7 +27,8 @@ static inline uint32_t	ft_countnbr(uint64_t nbr)
 	return (len);
 }
 
-static int			ft_putnbr_base(uint64_t value, char *base, char *str, int i)
+static int				ft_putnbr_base(uint64_t value, char *base
+									, char *str, int i)
 {
 	uint64_t		nb;
 	uint64_t		tmp;
@@ -46,7 +47,7 @@ static int			ft_putnbr_base(uint64_t value, char *base, char *str, int i)
 	}
 }
 
-char				*ft_ulltoa(uint64_t nbr)
+char					*ft_ulltoa(uint64_t nbr)
 {
 	char			*str;
 	uint32_t		len;
