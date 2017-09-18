@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/09/16 02:51:10 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/09/18 18:30:58 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 # include <string.h>
 # include <stdint.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 # define PHASZERO(x) ((((x + (0x7f7f7f7f7f7f7f7f)) ^ ~x) & 0x818080808080808080)
 # define PHASN(x, n) (Phaszero(x ^ ((~0UL / 255L) * n)))
-# define STATIC_BUF_SIZE 3
+# define STATIC_BUF_SIZE 4096
+# define BUFF_SIZE 4096
 # define STATIC_PUT_FLUSH 1
 
 # define NORETURN __attribute__((noreturn)) void
