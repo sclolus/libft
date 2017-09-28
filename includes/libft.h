@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/09/18 18:30:58 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/09/28 18:26:14 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,9 @@ void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_itoa(int n);
 char			*ft_ulltoa(uint64_t nbr);
+char			*ft_static_lltoa(int64_t nbr);
 char			*ft_static_ulltoa(uint64_t nbr);
+char			*ft_static_ulltoa_base(uint64_t nbr, char *base);
 char			*ft_strmap(char const *s, char (*f)(char));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int				ft_strequ(char const *s1, char const *s2);

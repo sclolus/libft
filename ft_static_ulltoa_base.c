@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_static_ulltoa.c                                 :+:      :+:    :+:   */
+/*   ft_static_ulltoa_base.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/17 23:08:09 by sclolus           #+#    #+#             */
-/*   Updated: 2017/09/28 17:46:33 by sclolus          ###   ########.fr       */
+/*   Created: 2017/09/28 17:45:16 by sclolus           #+#    #+#             */
+/*   Updated: 2017/09/28 17:57:07 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static inline uint32_t	ft_countnbr(uint64_t nbr)
+static inline uint32_t	ft_countnbr(uint64_t nbr, uint32_t base_len)
 {
 	uint32_t		len;
 
@@ -22,38 +22,27 @@ static inline uint32_t	ft_countnbr(uint64_t nbr)
 	while (nbr)
 	{
 		len++;
-		nbr /= 10;
+		nbr /= base_len;
 	}
 	return (len);
 }
 
-static int				ft_putnbr_base(uint64_t value, char *base
-									, char *str, int i)
+char					*ft_static_ulltoa_base(uint64_t nbr, char *base)
 {
-	uint64_t		nb;
-	uint64_t		tmp;
-
-	nb = value;
-	tmp = nb;
-	if (tmp > 9)
-	{
-		i = ft_putnbr_base(nb / 10, base, str, i);
-		return (ft_putnbr_base(nb % 10, base, str, i));
-	}
-	else
-	{
-		str[i++] = base[nb];
-		return (i);
-	}
-}
-
-char					*ft_static_ulltoa(uint64_t nbr)
-{
-	static char		str[sizeof("18446744073709551615")];
+	static char		str[65];
 	uint32_t		len;
+	uint32_t		base_len;
+	uint32_t		i;
 
-	len = ft_countnbr(nbr);
-	ft_putnbr_base(nbr, "0123456789", str, 0);
+	base_len = ft_strlen(base);
+	len = ft_countnbr(nbr, base_len);
+	i = len;
+	while (i > 0)
+	{
+		i--;
+		str[i] = base[nbr % base_len];
+		nbr /= base_len;
+	}
 	str[len] = '\0';
 	return (str);
 }
