@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 14:44:09 by sclolus           #+#    #+#             */
-/*   Updated: 2017/11/23 19:52:08 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/11/24 00:46:12 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ static int		getopt_argument(const int argc, char *const argv[]
 	{
 		if (g_optind + 1 >= argc)
 		{
-			g_optopt = *opt_char;
 			getopt_err(*opt_char, GETOPT_ERR_NO_ARG);
 			return ((int)GETOPT_ERR_CHAR);
 		}
@@ -81,10 +80,10 @@ int				ft_getopt(int argc, char *const argv[], const char *optstring)
 	if (argv[g_optind][index]
 		&& (opt_char = ft_strchr(optstring, argv[g_optind][index])))
 	{
+		g_optopt = *opt_char;
 		if (opt_char[1] == ':')
 			return (getopt_argument(argc, argv, &index, (const char*)opt_char));
 		index++;
-		g_optopt = *opt_char;
 		if (!argv[g_optind][index])
 		{
 			index = 1;
