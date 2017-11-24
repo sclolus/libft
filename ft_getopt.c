@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 14:44:09 by sclolus           #+#    #+#             */
-/*   Updated: 2017/11/24 00:46:12 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/11/24 01:04:12 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ int				ft_getopt(int argc, char *const argv[], const char *optstring)
 	if (getopt_done(argc, argv, &index))
 		return (-1);
 	if (argv[g_optind][index]
-		&& (opt_char = ft_strchr(optstring, argv[g_optind][index])))
+		&& (opt_char = ft_strchr(optstring, argv[g_optind][index]))
+		&& *opt_char != ':')
 	{
 		g_optopt = *opt_char;
 		if (opt_char[1] == ':')
