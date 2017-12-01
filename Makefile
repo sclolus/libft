@@ -78,6 +78,7 @@ SRC=	 ft_pow.c \
 		ft_get_cancer.c \
 		ft_strndup.c \
 		ft_static_put.c \
+		ft_static_put_fd.c \
 		ft_t_string_concat.c \
 		ft_t_string_expand.c \
 		ft_t_string_new.c \

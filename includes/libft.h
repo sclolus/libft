@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/11/23 14:42:53 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/12/01 19:19:23 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,8 @@ unsigned long	ft_pow(int nbr, unsigned int exponent);
 
 void			ft_print_page(void *addr);
 uint32_t		ft_static_put(char *str, uint32_t len, uint32_t flags);
+uint32_t		ft_static_put_fd(char *str, uint32_t len, uint32_t flags
+								, int fd);
 unsigned int	ft_strchr_index(char *str, char c);
 
 unsigned int	ft_log2(unsigned long long nbr);
