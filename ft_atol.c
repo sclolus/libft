@@ -6,15 +6,15 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 22:47:28 by sclolus           #+#    #+#             */
-/*   Updated: 2016/12/11 22:47:41 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/12/01 22:29:24 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atol(const char *str)
+uint64_t		ft_atol(const char *str)
 {
-	unsigned long	nbr;
+	uint64_t		nbr;
 	int				is_neg;
 
 	nbr = 0;

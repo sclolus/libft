@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/12/01 19:19:23 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/12/01 22:29:32 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_implode_strings(char **strings);
 int				ft_atoi(const char *str);
-int				ft_atol(const char *str);
+uint64_t		ft_atol(const char *str);
 int				ft_toupper(int c);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
