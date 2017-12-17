@@ -6,13 +6,13 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 15:33:53 by sclolus           #+#    #+#             */
-/*   Updated: 2016/12/21 02:06:33 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/12/11 02:41:12 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_sus_addr(unsigned long *longword_ptr, const char *s)
+inline static size_t	ft_sus_addr(unsigned long *longword_ptr, const char *s)
 {
 	char *tmp;
 
