@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 14:08:33 by sclolus           #+#    #+#             */
-/*   Updated: 2017/12/17 19:22:01 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/12/17 19:28:40 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,3 +80,5 @@ void					ft_sort(void *tab, size_t elem_nbr
 	ft_quicksort(tab, 0, elem_nbr - 1, compar, type_size);
 	return ;
 }
+
+#undef A_
