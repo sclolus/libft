@@ -6,13 +6,13 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/28 17:45:16 by sclolus           #+#    #+#             */
-/*   Updated: 2017/09/28 17:57:07 by sclolus          ###   ########.fr       */
+/*   Updated: 2017/12/19 10:33:39 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static inline uint32_t	ft_countnbr(uint64_t nbr, uint32_t base_len)
+static inline uint32_t	ft_countnbr(uint64_t nbr, const uint32_t base_len)
 {
 	uint32_t		len;
 
@@ -27,7 +27,7 @@ static inline uint32_t	ft_countnbr(uint64_t nbr, uint32_t base_len)
 	return (len);
 }
 
-char					*ft_static_ulltoa_base(uint64_t nbr, char *base)
+char					*ft_static_ulltoa_base(uint64_t nbr, const char *base)
 {
 	static char		str[65];
 	uint32_t		len;
