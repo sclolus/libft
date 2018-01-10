@@ -6,13 +6,13 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 04:20:02 by sclolus           #+#    #+#             */
-/*   Updated: 2016/12/09 04:24:03 by sclolus          ###   ########.fr       */
+/*   Updated: 2018/01/09 04:24:05 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_is_little_endian(void)
+int32_t	ft_get_endianness(void)
 {
 	short	tester;
 

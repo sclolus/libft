@@ -1,6 +1,6 @@
 NAME= libft.a
 CC= gcc
-FLAGS= -Wall -Wextra -Werror -g3 -fsanitize=address -fsanitize-blacklist=blacklist.txt
+FLAGS= -Wall -Wextra -Werror #-g3 -fsanitize=address -fsanitize-blacklist=blacklist.txt
 SRC=	 ft_pow.c \
 		ft_atoi.c \
 		ft_atol.c \
@@ -65,7 +65,7 @@ SRC=	 ft_pow.c \
 		ft_distance.c \
 		ft_strchr_index.c \
 		ft_log2.c \
-		ft_is_little_endian.c \
+		ft_get_endianness.c \
 		ft_is_power_of_two.c \
 		ft_lsttotab.c \
 		get_next_line.c \
@@ -96,7 +96,10 @@ SRC=	 ft_pow.c \
 		ft_static_ulltoa.c \
 		ft_static_ulltoa_base.c \
 		ft_static_lltoa.c \
-		ft_getopt.c
+		ft_getopt.c \
+		swap_int32.c \
+		swap_int16.c \
+		swap_int64.c
 
 OBJ= $(SRC:.c=.o)
 HDR_PATH= includes

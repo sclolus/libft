@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2017/12/19 10:33:44 by sclolus          ###   ########.fr       */
+/*   Updated: 2018/01/09 04:58:26 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,6 @@ unsigned int	ft_log2(unsigned long long nbr);
 uint64_t		ft_distance(uint64_t a, uint64_t b);
 unsigned int	ft_max(unsigned int a, unsigned int b);
 unsigned int	ft_is_power_of_two(unsigned long long nbr);
-unsigned int	ft_is_little_endian(void);
 
 uint64_t		ft_random(void);
 //void			ft_sort(int64_t	*tab, uint32_t len);
@@ -183,5 +182,19 @@ char			*ft_get_file_content(char *filename);
 
 int32_t			ft_error(uint32_t n, char **str, int32_t return_status);
 NORETURN		ft_error_exit(uint32_t n, char **str, int32_t exit_status);
+
+/*
+** Endianness
+*/
+
+enum	{
+	FT_BIG_ENDIAN,
+	FT_LITTLE_ENDIAN,
+};
+
+int32_t			ft_get_endianness(void);
+uint32_t		swap_int32(const uint32_t data);
+uint16_t		swap_int16(const uint16_t data);
+uint64_t		swap_int64(const uint64_t data);
 
 #endif
