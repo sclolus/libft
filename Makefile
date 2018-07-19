@@ -99,7 +99,11 @@ SRC=	 ft_pow.c \
 		ft_getopt.c \
 		swap_int32.c \
 		swap_int16.c \
-		swap_int64.c
+		swap_int64.c \
+		left_rotate_32.c \
+		left_rotate_64.c \
+		right_rotate_32.c \
+		right_rotate_64.c
 
 OBJ= $(SRC:.c=.o)
 HDR_PATH= includes

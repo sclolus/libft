@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2018/01/09 04:58:26 by sclolus          ###   ########.fr       */
+/*   Updated: 2018/07/19 08:47:43 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define BUFF_SIZE 4096
 # define STATIC_PUT_FLUSH 1
 
+# define INLINE __attribute__((always_inline)) inline
 # define NORETURN __attribute__((noreturn)) void
 
 # define ERROR_NAME_HEADER "libft_default_error: "
@@ -196,5 +197,10 @@ int32_t			ft_get_endianness(void);
 uint32_t		swap_int32(const uint32_t data);
 uint16_t		swap_int16(const uint16_t data);
 uint64_t		swap_int64(const uint64_t data);
+uint32_t		left_rotate_32(uint32_t word, uint32_t delta);
+uint32_t		left_rotate_64(uint64_t word, uint32_t delta);
+uint32_t		right_rotate_32(uint32_t word, uint32_t delta);
+uint32_t		right_rotate_64(uint64_t word, uint32_t delta);
+
 
 #endif
