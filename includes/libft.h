@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2018/07/19 08:47:43 by sclolus          ###   ########.fr       */
+/*   Updated: 2018/07/24 23:46:54 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,7 @@ t_string		*ft_t_string_concat_len(t_string *string
 ** File handling
 */
 
-char			*ft_get_file_content(char *filename);
+t_string		ft_get_file_content(char *filename);
 
 /*
 ** Error Handling
