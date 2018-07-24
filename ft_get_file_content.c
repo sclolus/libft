@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 05:02:58 by sclolus           #+#    #+#             */
-/*   Updated: 2017/09/18 18:45:10 by sclolus          ###   ########.fr       */
+/*   Updated: 2018/07/24 23:23:19 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ char			*ft_get_file_content(char *filename)
 	}
 	string.string[0] = '\0';
 	ft_get_file_content_string(&string, fd);
+	close(fd);
 	return (string.string);
 }
