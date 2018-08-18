@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   left_rotate_32.c                                   :+:      :+:    :+:   */
+/*   ft_atohu.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/19 08:42:18 by sclolus           #+#    #+#             */
-/*   Updated: 2018/08/18 04:04:36 by sclolus          ###   ########.fr       */
+/*   Created: 2018/08/18 03:49:33 by sclolus           #+#    #+#             */
+/*   Updated: 2018/08/18 03:50:02 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Result is undefined if delta >= 32.
-*/
-
-uint32_t	left_rotate_32(uint32_t word, uint32_t delta)
+uint16_t	ft_atohu(const char *str)
 {
-	return ((word << delta) | (word >> ((sizeof(int32_t) * 8) - delta)));
+	return (ft_atohu_base(str, "0123456789"));
 }

@@ -3,7 +3,13 @@ CC= gcc
 FLAGS= -Wall -Wextra -Werror #-g3 -fsanitize=address -fsanitize-blacklist=blacklist.txt
 SRC=	 ft_pow.c \
 		ft_atoi.c \
-		ft_atol.c \
+		ft_atohu.c \
+		ft_atohu_base.c \
+		ft_atou.c \
+		ft_atou_base.c \
+		ft_atollu.c \
+		ft_atoll.c \
+		ft_atollu_base.c \
 		ft_bzero.c \
 		ft_isalnum.c \
 		ft_isalpha.c \

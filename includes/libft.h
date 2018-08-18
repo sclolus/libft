@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2018/07/24 23:46:54 by sclolus          ###   ########.fr       */
+/*   Updated: 2018/08/18 04:05:43 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,13 @@ int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_implode_strings(char **strings);
 int				ft_atoi(const char *str);
-uint64_t		ft_atol(const char *str);
+uint16_t		ft_atohu(const char *str);
+uint16_t		ft_atohu_base(const char *str, const char *base);
+uint32_t		ft_atou(const char *str);
+uint32_t		ft_atou_base(const char *str, const char *base);
+int64_t			ft_atoll(const char *str);
+uint64_t		ft_atollu(const char *str);
+uint64_t		ft_atollu_base(const char *str, const char *base);
 int				ft_toupper(int c);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
@@ -152,7 +158,6 @@ unsigned int	ft_max(unsigned int a, unsigned int b);
 unsigned int	ft_is_power_of_two(unsigned long long nbr);
 
 uint64_t		ft_random(void);
-//void			ft_sort(int64_t	*tab, uint32_t len);
 void			ft_sort(void *tab, size_t elem_nbr, size_t type_size
 						, int (*compar)(const void *, const void *));
 void			ft_sort_strings(char **strings, uint32_t n);
@@ -201,6 +206,5 @@ uint32_t		left_rotate_32(uint32_t word, uint32_t delta);
 uint32_t		left_rotate_64(uint64_t word, uint32_t delta);
 uint32_t		right_rotate_32(uint32_t word, uint32_t delta);
 uint32_t		right_rotate_64(uint64_t word, uint32_t delta);
-
 
 #endif

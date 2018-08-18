@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   left_rotate_32.c                                   :+:      :+:    :+:   */
+/*   ft_atollu.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/19 08:42:18 by sclolus           #+#    #+#             */
-/*   Updated: 2018/08/18 04:04:36 by sclolus          ###   ########.fr       */
+/*   Created: 2018/08/18 03:14:36 by sclolus           #+#    #+#             */
+/*   Updated: 2018/08/18 04:03:07 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Result is undefined if delta >= 32.
-*/
-
-uint32_t	left_rotate_32(uint32_t word, uint32_t delta)
+uint64_t		ft_atollu(const char *str)
 {
-	return ((word << delta) | (word >> ((sizeof(int32_t) * 8) - delta)));
+	uint64_t		nbr;
+
+	nbr = 0;
+	while (*str == ' ' || *str == '\t' || *str == '\n'
+			|| *str == '\v' || *str == '\r' || *str == '\f')
+		str++;
+	while (*str && *str >= '0' && *str <= '9')
+	{
+		if ((nbr * 10UL + (uint64_t)*str - (uint64_t)'0') < nbr
+			|| (nbr > (~0UL / 10UL)))
+		{
+			nbr = ~0UL;
+			break ;
+		}
+		nbr = nbr * 10UL + (uint64_t)*str++ - (uint64_t)'0';
+	}
+	return (nbr);
 }

@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_atohu.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/11 22:47:28 by sclolus           #+#    #+#             */
-/*   Updated: 2017/12/01 22:29:24 by sclolus          ###   ########.fr       */
+/*   Created: 2018/08/18 03:47:34 by sclolus           #+#    #+#             */
+/*   Updated: 2018/08/18 04:03:36 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
-uint64_t		ft_atol(const char *str)
+uint16_t		ft_atohu_base(const char *str, const char *base)
 {
-	uint64_t		nbr;
-	int				is_neg;
+	uint16_t		nbr;
+	uint16_t		base_len;
+	char			*tmp;
 
 	nbr = 0;
-	is_neg = 0;
+	base_len = ft_strlen(base);
 	while (*str == ' ' || *str == '\t' || *str == '\n'
-			|| *str == '\v' || *str == '\r' || *str == '\f')
+		|| *str == '\v' || *str == '\r' || *str == '\f')
 		str++;
-	if (*str == '-')
+	while (*str && (tmp = ft_strchr(base, *str)))
 	{
-		is_neg = 1;
+		if ((uint16_t)(nbr * base_len + (uint16_t)tmp - (uint16_t)base) < nbr
+			|| ((nbr > (uint16_t)USHRT_MAX / base_len)))
+		{
+			nbr = (uint16_t)USHRT_MAX;
+			break ;
+		}
+		nbr = nbr * base_len + (uint16_t)tmp - (uint16_t)base;
 		str++;
 	}
-	else if (*str == '+')
-		str++;
-	while (*str && *str >= '0' && *str <= '9')
-		nbr = nbr * 10 + *str++ - '0';
-	if (is_neg)
-		return (-nbr);
 	return (nbr);
 }

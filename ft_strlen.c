@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 15:33:53 by sclolus           #+#    #+#             */
-/*   Updated: 2017/12/11 02:41:12 by sclolus          ###   ########.fr       */
+/*   Updated: 2018/08/18 04:02:33 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ inline static size_t	ft_sus_addr(unsigned long *longword_ptr, const char *s)
 		return (tmp - s + 7);
 }
 
-size_t			ft_strlen(const char *s)
+size_t					ft_strlen(const char *s)
 {
 	unsigned long	*longword_ptr;
 	unsigned char	*tmp;
