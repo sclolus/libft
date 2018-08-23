@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr_index.c                                  :+:      :+:    :+:   */
+/*   get_precision.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/06 18:14:06 by sclolus           #+#    #+#             */
-/*   Updated: 2018/08/23 06:15:11 by sclolus          ###   ########.fr       */
+/*   Created: 2018/08/22 17:21:43 by sclolus           #+#    #+#             */
+/*   Updated: 2018/08/22 17:53:23 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-unsigned int	ft_strchr_index(const char *str, char c)
+uint64_t	get_precision(const char *str, t_conversion *conversion)
 {
-	unsigned int	i;
+	uint64_t	i;
 
-	i = 0;
-	if (!str)
+	if (*str != '.')
+	{
+		conversion->precision = 0;
 		return (0);
-	while (str[i] && str[i] != c)
+	}
+	str++;
+	conversion->precision = ft_atollu(str);
+	i = 0;
+	while (str[i] && ft_isdigit(str[i]))
 		i++;
-	return (i);
+	return (i + 1);
 }

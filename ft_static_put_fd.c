@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:55:22 by sclolus           #+#    #+#             */
-/*   Updated: 2017/12/01 19:36:52 by sclolus          ###   ########.fr       */
+/*   Updated: 2018/08/23 06:15:55 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Stupid norme
 */
 
-static uint32_t	ft_static_auto_flush(char **str, uint32_t *len
+static uint32_t	ft_static_auto_flush(const char **str, uint32_t *len
 									, char *buf, uint32_t **offset_fd)
 {
 	uint32_t	count;
@@ -41,7 +41,7 @@ static uint32_t	ft_static_auto_flush(char **str, uint32_t *len
 	return (count);
 }
 
-uint32_t		ft_static_put_fd(char *str, uint32_t len, uint32_t flags
+uint32_t		ft_static_put_fd(const char *str, uint32_t len, uint32_t flags
 								, int fd)
 {
 	static char		buffer[STATIC_BUF_SIZE];

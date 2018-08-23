@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr_index.c                                  :+:      :+:    :+:   */
+/*   get_field_width.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/06 18:14:06 by sclolus           #+#    #+#             */
-/*   Updated: 2018/08/23 06:15:11 by sclolus          ###   ########.fr       */
+/*   Created: 2018/08/22 17:41:10 by sclolus           #+#    #+#             */
+/*   Updated: 2018/08/22 17:42:00 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-unsigned int	ft_strchr_index(const char *str, char c)
+uint64_t	get_field_width(const char *str, t_conversion *conversion)
 {
-	unsigned int	i;
+	uint64_t	i;
 
+	conversion->field_width = ft_atollu(str);
 	i = 0;
-	if (!str)
-		return (0);
-	while (str[i] && str[i] != c)
+	while (str[i] && ft_isdigit(str[i]))
 		i++;
 	return (i);
 }

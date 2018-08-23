@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr_index.c                                  :+:      :+:    :+:   */
+/*   get_conversion_type.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/06 18:14:06 by sclolus           #+#    #+#             */
-/*   Updated: 2018/08/23 06:15:11 by sclolus          ###   ########.fr       */
+/*   Created: 2018/08/22 17:42:40 by sclolus           #+#    #+#             */
+/*   Updated: 2018/08/22 17:46:23 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-unsigned int	ft_strchr_index(const char *str, char c)
+int32_t	get_conversion_type(const char *str, t_conversion *conversion)
 {
-	unsigned int	i;
-
-	i = 0;
-	if (!str)
+	if (ft_strchr(PRINTF_CONVERSION_FLAGS, *str))
+	{
+		conversion->conversion = *str;
 		return (0);
-	while (str[i] && str[i] != c)
-		i++;
-	return (i);
+	}
+	return (-1);
 }

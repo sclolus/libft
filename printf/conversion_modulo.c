@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr_index.c                                  :+:      :+:    :+:   */
+/*   conversion_modulo.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/06 18:14:06 by sclolus           #+#    #+#             */
-/*   Updated: 2018/08/23 06:15:11 by sclolus          ###   ########.fr       */
+/*   Created: 2018/08/23 03:01:40 by sclolus           #+#    #+#             */
+/*   Updated: 2018/08/23 05:46:48 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-unsigned int	ft_strchr_index(const char *str, char c)
+uint64_t	conversion_modulo(t_conversion *conversion)
 {
-	unsigned int	i;
+	uint64_t	printed_count;
 
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i] && str[i] != c)
-		i++;
-	return (i);
+	printed_count = 1;
+	if (!conversion->flags.negative)
+		printed_count += print_left_padding(conversion, printed_count);
+	ft_static_put_fd("%", 1U, 0, g_printf_info.printing_fd);
+	if (conversion->flags.negative)
+		printed_count += print_left_padding(conversion, printed_count);
+	return (printed_count);
 }

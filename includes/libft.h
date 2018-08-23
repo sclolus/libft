@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:35:25 by sclolus           #+#    #+#             */
-/*   Updated: 2018/08/18 04:05:43 by sclolus          ###   ########.fr       */
+/*   Updated: 2018/08/23 06:15:24 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # define GETOPT_ON
 # include "ft_getopt.h"
+# include "ft_printf.h"
 
 # define PHASZERO(x) ((((x + (0x7f7f7f7f7f7f7f7f)) ^ ~x) & 0x818080808080808080)
 # define PHASN(x, n) (Phaszero(x ^ ((~0UL / 255L) * n)))
@@ -147,10 +148,10 @@ void			*ft_lsttotab(t_list *lst, unsigned int len);
 unsigned long	ft_pow(int nbr, unsigned int exponent);
 
 void			ft_print_page(void *addr);
-uint32_t		ft_static_put(char *str, uint32_t len, uint32_t flags);
-uint32_t		ft_static_put_fd(char *str, uint32_t len, uint32_t flags
+uint32_t		ft_static_put(const char *str, uint32_t len, uint32_t flags);
+uint32_t		ft_static_put_fd(const char *str, uint32_t len, uint32_t flags
 								, int fd);
-unsigned int	ft_strchr_index(char *str, char c);
+unsigned int	ft_strchr_index(const char *str, char c);
 
 unsigned int	ft_log2(unsigned long long nbr);
 uint64_t		ft_distance(uint64_t a, uint64_t b);

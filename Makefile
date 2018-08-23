@@ -109,7 +109,29 @@ SRC=	 ft_pow.c \
 		left_rotate_32.c \
 		left_rotate_64.c \
 		right_rotate_32.c \
-		right_rotate_64.c
+		right_rotate_64.c \
+		./printf/ft_printf.c \
+		./printf/get_conversion.c \
+		./printf/process_conversion.c \
+		./printf/get_conversion_flag.c \
+		./printf/flags_parsing_callbacks.c \
+		./printf/get_precision.c \
+		./printf/get_length_modifier.c \
+		./printf/get_field_width.c \
+		./printf/get_conversion_type.c \
+		./printf/get_va_arg_value.c \
+		./printf/print_conversion.c \
+		./printf/print_left_padding.c \
+		./printf/conversion_signed_decimal.c \
+		./printf/conversion_unsigned_decimal.c \
+		./printf/conversion_small_hex.c \
+		./printf/conversion_capital_hex.c \
+		./printf/conversion_octal.c \
+		./printf/conversion_char.c \
+		./printf/conversion_string.c \
+		./printf/conversion_pointer.c \
+		./printf/conversion_printed_chars.c \
+		./printf/conversion_modulo.c
 
 OBJ= $(SRC:.c=.o)
 HDR_PATH= includes
@@ -119,7 +141,7 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
-	$(CC) $(FLAGS) $< -I $(HDR_PATH) -c
+	$(CC) $(FLAGS) $< -I $(HDR_PATH) -c -o $@
 
 clean:
 	rm -f $(OBJ)

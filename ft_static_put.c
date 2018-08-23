@@ -6,14 +6,14 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/24 10:51:59 by sclolus           #+#    #+#             */
-/*   Updated: 2017/12/01 22:27:05 by sclolus          ###   ########.fr       */
+/*   Updated: 2018/08/23 06:16:00 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-static uint32_t	ft_static_auto_flush(char **str, uint32_t *len
+static uint32_t	ft_static_auto_flush(const char **str, uint32_t *len
 									, char *buf, uint32_t *offset)
 {
 	uint32_t	count;
@@ -37,7 +37,7 @@ static uint32_t	ft_static_auto_flush(char **str, uint32_t *len
 	return (count);
 }
 
-uint32_t		ft_static_put(char *str, uint32_t len, uint32_t flags)
+uint32_t		ft_static_put(const char *str, uint32_t len, uint32_t flags)
 {
 	static char		buffer[STATIC_BUF_SIZE];
 	static uint32_t	offset = 0;
