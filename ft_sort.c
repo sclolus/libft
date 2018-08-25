@@ -6,7 +6,7 @@
 /*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 14:08:33 by sclolus           #+#    #+#             */
-/*   Updated: 2017/12/17 19:28:40 by sclolus          ###   ########.fr       */
+/*   Updated: 2018/08/25 12:19:27 by sclolus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ inline static void		ft_swap(void *a, void *b, size_t type_size)
 	}
 	while (i < type_size)
 	{
-		tmp = ((uint64_t*)a)[i];
-		((uint64_t*)a)[i] = ((uint64_t*)b)[i];
-		((uint64_t*)b)[i] = tmp;
+		tmp = ((uint64_t*)a)[i / 8];
+		((uint64_t*)a)[i / 8] = ((uint64_t*)b)[i / 8];
+		((uint64_t*)b)[i / 8] = tmp;
 		i += 8;
 	}
 }
