@@ -17,7 +17,7 @@ uint64_t	conversion_char(t_conversion *conversion)
 	uint64_t	printed_count;
 	char		value;
 
-	value = (char)conversion->value;
+	value = *(char*)conversion->value;
 	printed_count = 1;
 	if (!conversion->flags.negative)
 		printed_count += print_left_padding(conversion, printed_count);

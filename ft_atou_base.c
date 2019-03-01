@@ -25,13 +25,13 @@ uint32_t		ft_atou_base(const char *str, const char *base)
 		str++;
 	while (*str && (tmp = ft_strchr(base, *str)))
 	{
-		if ((nbr * base_len + (uint32_t)tmp - (uint32_t)base) < nbr
+		if ((nbr * base_len + (uint32_t)(tmp - base)) < nbr
 			|| ((nbr > (~0U / base_len))))
 		{
 			nbr = ~0U;
 			break ;
 		}
-		nbr = nbr * base_len + (uint32_t)tmp - (uint32_t)base;
+		nbr = nbr * base_len + (uint32_t)(tmp - base);
 		str++;
 	}
 	return (nbr);

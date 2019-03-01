@@ -19,11 +19,11 @@ static void		*ft_signed_cast(void *value, t_conversion *arg)
 	else if (arg->modifier == MOD_LL)
 		return ((void *)(uint64_t)value);
 	else if (arg->modifier == MOD_H)
-		return ((void *)(uint64_t)(int16_t)value);
+		return ((void *)(uint64_t)(int16_t)(uint64_t)value);
 	else if (arg->modifier == MOD_HH)
-		return ((void *)(uint64_t)(char)value);
+		return ((void *)(uint64_t)(char)(uint64_t)value);
 	else
-		return ((void *)(uint64_t)(int32_t)value);
+		return ((void *)(uint64_t)(int32_t)(uint64_t)value);
 }
 
 static void		*ft_unsigned_cast(void *value
@@ -34,11 +34,11 @@ static void		*ft_unsigned_cast(void *value
 	else if (arg->modifier == MOD_LL)
 		return ((void *)(uint64_t)(int64_t)value);
 	else if (arg->modifier == MOD_H)
-		return ((void *)(uint64_t)(uint16_t)value);
+		return ((void *)(uint64_t)(uint16_t)(uint64_t)value);
 	else if (arg->modifier == MOD_HH)
-		return ((void *)(uint64_t)(uint8_t)value);
+		return ((void *)(uint64_t)(uint8_t)(uint64_t)value);
 	else
-		return ((void *)(uint64_t)(uint32_t)value);
+		return ((void *)(uint64_t)(uint32_t)(uint64_t)value);
 }
 
 static void		*argument_cast(void *value, t_conversion *arg)

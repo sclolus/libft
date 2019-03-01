@@ -26,13 +26,13 @@ uint16_t		ft_atohu_base(const char *str, const char *base)
 		str++;
 	while (*str && (tmp = ft_strchr(base, *str)))
 	{
-		if ((uint16_t)(nbr * base_len + (uint16_t)tmp - (uint16_t)base) < nbr
+		if ((uint16_t)(nbr * base_len + (uint16_t)(tmp - base)) < nbr
 			|| ((nbr > (uint16_t)USHRT_MAX / base_len)))
 		{
 			nbr = (uint16_t)USHRT_MAX;
 			break ;
 		}
-		nbr = nbr * base_len + (uint16_t)tmp - (uint16_t)base;
+		nbr = nbr * base_len + (uint16_t)(tmp - base);
 		str++;
 	}
 	return (nbr);
